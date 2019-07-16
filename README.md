@@ -1,5 +1,7 @@
 # CodeIgniter 4 Pagination Library
 
+Simple and Flexible Pagination Library for CodeIgniter 4
+
 ## Requirement
 
 * PHP 7.2 or above
