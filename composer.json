@@ -1,0 +1,28 @@
+{
+    "name": "kejawenlab/ci4pager",
+    "description": "CodeIgniter 4 Pagination Library",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2",
+        "ext-pdo": "*",
+        "codeigniter4/framework": "dev-master"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "KejawenLab\\CodeIgniter\\Pagination\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "KejawenLab\\CodeIgniter\\Pagination\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev"
+}
