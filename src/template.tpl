@@ -4,10 +4,10 @@
         <button>#totalText#: #totalCount#</button>
     </div>
     <div>
-        #first#
-        #previous#
-        #current#
-        #next#
-        #last#
+        #firstLink#
+        #previousLink#
+        #currentLink#
+        #nextLink#
+        #lastLink#
     </div>
 </div>

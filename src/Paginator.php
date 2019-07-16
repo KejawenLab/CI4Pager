@@ -24,6 +24,8 @@ class Paginator
 
     private $isFirstPage = true;
 
+    private $isLastPage = false;
+
     public static function createFromResult(ResultInterface $result, int $page = 1, int $perPage = 17): self
     {
         return new static($result->getResultArray(), $page, $perPage);
@@ -34,6 +36,11 @@ class Paginator
         $queryBuilder->limit($perPage, ($page - 1) * $perPage);
 
         return new static($queryBuilder->get()->getResultArray(), $page, $perPage);
+    }
+
+    public static function createFromArray(array $records, int $page = 1, int $perPage = 17): self
+    {
+        return new static($records, $page, $perPage);
     }
 
     public function getCurrentPage(): int
@@ -80,6 +87,11 @@ class Paginator
         return $this->isFirstPage;
     }
 
+    public function isLastPage(): bool
+    {
+        return $this->isLastPage;
+    }
+
     private function __construct(array $result, int $page, int $perPage)
     {
         $this->data = array_slice($result, ($this->page - 1) * $this->perPage, $this->perPage);
@@ -88,5 +100,6 @@ class Paginator
         $this->totalData = count($result);
         $this->totalPage = (int) ceil($this->totalData / $this->perPage);
         $this->isFirstPage = $page === 1 ? true : false;
+        $this->isLastPage = $page === $this->totalPage ? true : false;
     }
 }
