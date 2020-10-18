@@ -6,7 +6,7 @@
     "require": {
         "php": ">=7.2",
         "ext-pdo": "*",
-        "codeigniter4/framework": "dev-master"
+        "codeigniter4/framework": ">=4.0"
     },
     "config": {
         "preferred-install": {
